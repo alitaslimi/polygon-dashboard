@@ -9,7 +9,6 @@ This [Polygon NFTs Dashboard](https://alitaslimi-polygon.streamlit.app) was orig
 - **Wash Trades**: [Overview](https://flipsidecrypto.xyz/edit/queries/a5044912-5248-4b80-862a-e8fba60e61e2) | [Weekly](https://flipsidecrypto.xyz/edit/queries/5a52f1a9-e121-4967-b0df-cbc35d8a5c13)
 
 ## Roadmap
-- Break down the app into multiple pages for better segmentation;
 - Add charts for mints by marketplace and by collections
 - Add charts for wash trades by marketplace and by collection
 - Add charts for wash traders
