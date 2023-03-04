@@ -31,21 +31,21 @@ st.write(
     """
 )
 
-with st.expander('**Methodology**'):
-    st.write(
-        """
-        The data for this dashboard was selected from the [**Flipside Crypto**](https://flipsidecrypto.xyz)
-        data platform by using its **REST API**. The code for this tool is saved and accessible
-        in its [**GitHub Repository**](https://github.com/alitaslimi/polygon-dashboard).
+st.subheader('**Methodology**')
+st.write(
+    """
+    The data for this dashboard was selected from the [**Flipside Crypto**](https://flipsidecrypto.xyz)
+    data platform by using its **REST API**. The code for this tool is saved and accessible
+    in its [**GitHub Repository**](https://github.com/alitaslimi/polygon-dashboard).
 
-        The links to the SQL queries are provided in the readme of the GitHub repo, as well as the description
-        of the methodology and the limitation of measuring the NFT sales (primary and secondary) from the
-        data available through Flipside.
+    The links to the SQL queries are provided in the readme of the GitHub repo, as well as the description
+    of the methodology and the limitation of measuring the NFT sales (primary and secondary) from the
+    data available through Flipside.
 
-        This dashboard is designed and structured in multiple **Tabs** that are accessible under the **Analysis**
-        section. Each of these Tabs addresses a different segment of the Polygon NFT ecosystem (Mints, Sales, etc.).
-        """
-    )
+    This dashboard is designed and structured in multiple **Pages** that are accessible within the sidebar.
+    Each of these Tabs addresses a different segment of the Polygon NFT ecosystem (Mints, Sales, etc.).
+    """
+)
 
 # Whitespace
 st.write("""
