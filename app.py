@@ -61,11 +61,16 @@ washed_overview = get_data('Washed Overview')
 washed_weekly = get_data('Washed Weekly')
 
 # Content
-st.header('Introduction')
-
 st.write(
     """
-    Lorem ipsum.
+    NFTs (non-fungible tokens) on Polygon are unique digital assets that are stored on the Polygon
+    blockchain network. NFTs represent ownership of a specific asset or collectible, such as digital
+    art, music, videos, and other digital content. Polygon provides a low-cost and fast way to mint,
+    transfer, and trade NFTs, making it an ideal platform for creators and collectors to exchange
+    and showcase their digital assets. The growing popularity of NFTs has led to an explosion of
+    innovative use cases, such as NFT gaming, virtual real estate, and even social media profiles.
+    Overall, NFTs on Polygon offer an exciting new way to own, trade, and experience unique digital
+    assets.
     """
 )
 
@@ -73,9 +78,12 @@ with st.expander('**Methodology**'):
     st.write(
         """
         The data for this dashboard was selected from the [**Flipside Crypto**](https://flipsidecrypto.xyz)
-        data platform by using its **REST API**. These queries are currently set to **re-run every 24 hours** to
-        cover the latest data and are imported as a JSON file. The code for this tool is saved and accessible
-        in its [**GitHub Repository**](https://github.com/alitaslimi/).
+        data platform by using its **REST API**. The code for this tool is saved and accessible
+        in its [**GitHub Repository**](https://github.com/alitaslimi/polygon-dashboard).
+
+        The links to the SQL queries are provided in the readme of the GitHub repo, as well as the description
+        of the methodology and the limitation of measuring the NFT sales (primary and secondary) from the
+        data available through Flipside.
 
         This dashboard is designed and structured in multiple **Tabs** that are accessible under the **Analysis**
         section. Each of these Tabs addresses a different segment of the Polygon NFT ecosystem (Mints, Sales, etc.).
