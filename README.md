@@ -8,9 +8,5 @@ This [Polygon NFTs Dashboard](https://alitaslimi-polygon.streamlit.app) was orig
 - **Collections**: [Overview](https://flipsidecrypto.xyz/edit/queries/e932af65-3295-4294-8b8a-796b702375d6) | [Weekly](https://flipsidecrypto.xyz/edit/queries/84a104d7-e759-43cb-9b2e-4e6bfa218052)
 - **Wash Trades**: [Overview](https://flipsidecrypto.xyz/edit/queries/a5044912-5248-4b80-862a-e8fba60e61e2) | [Weekly](https://flipsidecrypto.xyz/edit/queries/5a52f1a9-e121-4967-b0df-cbc35d8a5c13)
 
-## Roadmap
-- Add charts for mints by marketplace and by collections
-- Add charts for wash trades by marketplace and by collection
-- Add charts for wash traders
-- Write the methodology on how to calculate the NFT mints and sales from the events table
-- Write the methodology on how to calculate the wash trades
+## Methodology
+To be able to find NFT sale transactions, various assumptions were made to select the proper data from the tables. These transactions had a **Transfer** *event_name* with a **tokenId** key in their *event_inputs* column. Also, only the **from** and **to** addresses without a **NULL** value were selected to remove the NFT mints and burns.
