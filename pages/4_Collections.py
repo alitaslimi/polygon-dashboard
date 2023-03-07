@@ -90,22 +90,22 @@ df = df.groupby(['Date', 'Collection']).agg({'Sales': 'sum', 'Sellers': 'sum', '
 
 c1, c2 = st.columns(2)
 with c1:
-    fig = px.bar(df, x='Date', y='Volume', color='Collection', custom_data=['Collection'], title='Daily Sales Volume of Top Marketplaces By Volume')
+    fig = px.bar(df, x='Date', y='Volume', color='Collection', custom_data=['Collection'], title='Daily Sales Volume of Top Collections By Volume')
     fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Volume [USD]', hovermode='x unified')
     fig.update_traces(hovertemplate='%{customdata}: $%{y:,.0f}<extra></extra>')
     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
-    fig = px.bar(df, x='Date', y='Sales', color='Collection', custom_data=['Collection'], title='Daily Sales of Top Marketplaces By Volume')
+    fig = px.bar(df, x='Date', y='Sales', color='Collection', custom_data=['Collection'], title='Daily Sales of Top Collections By Volume')
     fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Sales', hovermode='x unified')
     fig.update_traces(hovertemplate='%{customdata}: %{y:,.0f}<extra></extra>')
     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
     
-    fig = px.bar(df, x='Date', y='Buyers', color='Collection', custom_data=['Collection'], title='Daily Buyers of Top Marketplaces By Volume')
+    fig = px.bar(df, x='Date', y='Buyers', color='Collection', custom_data=['Collection'], title='Daily Buyers of Top Collections By Volume')
     fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='Buyers', hovermode='x unified')
     fig.update_traces(hovertemplate='%{customdata}: %{y:,.0f}<extra></extra>')
     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
     
-    fig = px.bar(df, x='Date', y='NFTs', color='Collection', custom_data=['Collection'], title='Daily Traded NFTs of Top Marketplaces By Volume')
+    fig = px.bar(df, x='Date', y='NFTs', color='Collection', custom_data=['Collection'], title='Daily Traded NFTs of Top Collections By Volume')
     fig.update_layout(legend_title=None, xaxis_title=None, yaxis_title='NFTs', hovermode='x unified')
     fig.update_traces(hovertemplate='%{customdata}: %{y:,.0f}<extra></extra>')
     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
