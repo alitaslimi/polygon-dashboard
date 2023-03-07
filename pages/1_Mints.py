@@ -25,12 +25,10 @@ with open('style.css')as f:
 
 # Data Sources
 mints_overview = data.get_data('Mints Overview')
+mints_collections = data.get_data('Mints Collections')
 mints_weekly = data.get_data('Mints Weekly')
 
 # Content
-# tab_overview, tab_marketplaces, tab_collections = st.tabs(['**Overview**', '**Marketplaces**', '**Collections**'])
-
-# with tab_overview:
 st.subheader('Overview')
 
 df = mints_overview
@@ -43,6 +41,22 @@ with c3:
     st.metric(label='**Total Minted NFTs**', value=str(df['NFTs'].map('{:,.0f}'.format).values[0]))
 with c4:
     st.metric(label='**Total Minted Collections**', value=str(df['Collections'].map('{:,.0f}'.format).values[0]))
+
+st.subheader('Collections')
+
+df = mints_collections
+
+c1, c2 = st.columns(2)
+with c1:
+    fig = px.pie(df.sort_values('Mints', ascending=False).head(10), values='Mints', names='Collection', title='Share of Total Mints by Collection', hole=0.4)
+    fig.update_layout(legend_title=None, legend_y=0.5)
+    fig.update_traces(textinfo='percent+label', textposition='inside')
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+with c2:
+    fig = px.pie(df.sort_values('Minters', ascending=False).head(10), values='Minters', names='Collection', title='Share of Total Unique Minters by Collection', hole=0.4)
+    fig.update_layout(legend_title=None, legend_y=0.5)
+    fig.update_traces(textinfo='percent+label', textposition='inside')
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
 st.subheader('Activity Over Time')
 

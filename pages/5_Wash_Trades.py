@@ -25,12 +25,10 @@ with open('style.css')as f:
 
 # Data Sources
 washed_overview = data.get_data('Washed Overview')
+washed_collections = data.get_data('Washed Collections')
 washed_weekly = data.get_data('Washed Weekly')
 
 # Content
-# tab_overview, tab_marketplaces, tab_collections = st.tabs(['**Overview**', '**Marketplaces**', '**Collections**'])
-
-# with tab_overview:
 st.subheader('Overview')
 
 df = washed_overview
@@ -64,6 +62,27 @@ with c3:
     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
 
     fig = px.pie(df.sort_values('Collections', ascending=False).head(10), values='Collections', names='Trade', title='Share of Legit vs Washed Collections', hole=0.4)
+    fig.update_layout(legend_title=None, legend_y=0.5)
+    fig.update_traces(textinfo='percent+label', textposition='inside')
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+
+st.subheader('Collections')
+
+df = washed_collections
+
+c1, c2, c3 = st.columns(3)
+with c1:
+    fig = px.pie(df.sort_values('Volume', ascending=False).head(10), values='Volume', names='Collection', title='Share of Washed Volume by Collection', hole=0.4)
+    fig.update_layout(legend_title=None, legend_y=0.5)
+    fig.update_traces(textinfo='percent+label', textposition='inside')
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+with c2:
+    fig = px.pie(df.sort_values('Sales', ascending=False).head(10), values='Sales', names='Collection', title='Share of Wash Trades by Collection', hole=0.4)
+    fig.update_layout(legend_title=None, legend_y=0.5)
+    fig.update_traces(textinfo='percent+label', textposition='inside')
+    st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
+with c3:
+    fig = px.pie(df.sort_values('Buyers', ascending=False).head(10), values='Buyers', names='Collection', title='Share of Wash Traders by Collection', hole=0.4)
     fig.update_layout(legend_title=None, legend_y=0.5)
     fig.update_traces(textinfo='percent+label', textposition='inside')
     st.plotly_chart(fig, use_container_width=True, theme=theme_plotly)
